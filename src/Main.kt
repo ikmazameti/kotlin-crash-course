@@ -1,115 +1,51 @@
+package com.mawuli.helloworld //declare a package
 /**
- *  Operators and Expression
+ * You can edit, run, and share this code.
+ * play.kotlinlang.org
  */
 
+/**
 
-fun main() {
+ */
 
-//OPERATORS
-    val total = 100 + 50 // literal values
-    val result = 20 + total // variable
+// main function
 
-    /**
-     *  TYPES OF OPERATORS
-     *  ---------------------
-     *  1. Arithmetic operators
-     *  2. Assignment operators
-     *  3. Comparison operators
-     *  4. Logical operators
-     */
+fun main() { // function
+    val greeting = "Hello, Kotlin!" //variable
+    println(greeting)
 
-    /**
-     * KOTLIN ARITHMETIC OPERATORS
-     *  Addition (+):        Adds two numbers.
-     *  Subtraction (-):     Subtracts one number from another.
-     *  Multiplication (*):  Multiplies two numbers.
-     *  Division (/):        Divides one number by another.
-     *  Modulo (%):          Returns the remainder of a division.
-     *
-     */
+    //Data Types
+    //val userAge : Int = 24
+
+    // 1. Number: Int (whole numbers),  Double or Float ( fraction  or decimal numbers),
+    //2. Text : String (more than one characters),
+    //3. Boolean: (True or false state)
 
 
-    val applePrice = 20
-    val orangePrice = 4
-    val fruitPrice = applePrice + orangePrice
-    println(fruitPrice)
+    //How to Variable
+    //2 ways
+    //1. val:  read-only
+    //2. var: mutable variables
 
-    val differencInPrice = applePrice - orangePrice
-    println(differencInPrice    )
+    val PI:Double = 3.1415
+    val userName : String = "Mawuli Azameti"
+    val isOnline: Boolean = false
 
-    val remainder = applePrice % orangePrice
-    println(remainder)
+    // userName = "John Doe"
 
-    /**
-     * KOTLIN ASSIGNMENT OPERATOR
-     *    =   Assign values to variables
-     */
+    //Var
+    var userAge  : Int = 0
+    userAge  =  1
+    println("My age is " + userAge)
 
+    //best practice
+    //val 8bits:String = "hello"
+    var user_name:String = ""
 
+    val x:Int = 1
+    val y:Double = 2.1
 
-
-
-
-
-
-
-
-
-
-    /**
-     * KOTLIN COMPARISON OPERATORS
-     *  Equal to (==) ==
-     *  Not equal to (!=)
-     *  Greater than (>)
-     *  Less than (<)
-     *  Greater than or equal to (>=)
-     *  Less than or equal to (<=)
-     */
-
-
-    val person1Age = 25
-    val person2Age = 30
-
-    val check = person1Age == person2Age
-    println(check)
-    val check1 = person1Age != person2Age
-
-
-    // println("Is person 1 the same age as person 2? ${person1Age == person2Age}")          // false
-    //  println("Is person 1 not the same age as person 2? ${person1Age != person2Age}")      // true
-//    println("Is person 1 older than person 2? ${person1Age > person2Age}")                // false
-//    println("Is person 1 younger or the same age as person 2? ${person1Age <= person2Age}") // true
-
-
-
-
-
-
-
-    /**
-     *  KOTLIN LOGICAL OPERATORS
-     *   And (&&) - Returns true if both statements are true
-     *   Or (||) - Returns true if one of the statements is true
-     *   Not (!) - Reverse the result, returns false if the result is true
-     */
-
-    val isSunny = true
-    val isWeekend = false
-
-    println("Should I go outside? ${isSunny && isWeekend}")  // false
-    println("Can I stay inside? ${!isSunny || !isWeekend}")  // true
-
-
-
-    //String template
-    //    $
-
-    val language = "Kotlin"
-    val human = "Einstein"
-    println("Hello ${person1Age + person2Age}! Can we be friends?")
-
-    val tax = 4+7
-
-    println("Hello world!")
+    var productId:String = ""
+    productId = "3243532"
 
 }
