@@ -1,115 +1,85 @@
 /**
- *  Operators and Expression
+ *  Control Flow using Conditionals (if-else and when)
  */
-
-
 fun main() {
 
-//OPERATORS
-    val total = 100 + 50 // literal values
-    val result = 20 + total // variable
 
     /**
-     *  TYPES OF OPERATORS
-     *  ---------------------
-     *  1. Arithmetic operators
-     *  2. Assignment operators
-     *  3. Comparison operators
-     *  4. Logical operators
-     */
-
-    /**
-     * KOTLIN ARITHMETIC OPERATORS
-     *  Addition (+):        Adds two numbers.
-     *  Subtraction (-):     Subtracts one number from another.
-     *  Multiplication (*):  Multiplies two numbers.
-     *  Division (/):        Divides one number by another.
-     *  Modulo (%):          Returns the remainder of a division.
+     *1. Syntax of if Statement
+     * ***********************
      *
+     *   if (condition){
+     *      body
+     *   }
      */
 
-
-    val applePrice = 20
-    val orangePrice = 4
-    val fruitPrice = applePrice + orangePrice
-    println(fruitPrice)
-
-    val differencInPrice = applePrice - orangePrice
-    println(differencInPrice    )
-
-    val remainder = applePrice % orangePrice
-    println(remainder)
-
-    /**
-     * KOTLIN ASSIGNMENT OPERATOR
-     *    =   Assign values to variables
-     */
+    val age = 30
+    if (age >= 18) println("You are eligible to vote!") else println("You are not eligible to vote!")
 
 
-
-
-
-
-
-
-
-
+    val voterAge = 70
+    if (voterAge >= 65) {
+        println("You can vote and you are eligible for senior citizen discount!")
+    } else if (voterAge >= 18) {
+        println("You can vote but  you are not eligible for senior citizen discount!")
+    } else {
+        println("You can not vote and you are not eligible for senior citizen discount!")
+    }
 
 
     /**
-     * KOTLIN COMPARISON OPERATORS
-     *  Equal to (==) ==
-     *  Not equal to (!=)
-     *  Greater than (>)
-     *  Less than (<)
-     *  Greater than or equal to (>=)
-     *  Less than or equal to (<=)
+     * Syntax of if-else Statement
+     * ***********************
+     *
+     *   if (condition){
+     *      body1
+     *   } else {
+     *      body2
+     *   }
      */
 
 
-    val person1Age = 25
-    val person2Age = 30
-
-    val check = person1Age == person2Age
-    println(check)
-    val check1 = person1Age != person2Age
+    val firstNum = 20
+    val secondNum = 30
+    val max = if (firstNum > secondNum) firstNum else secondNum
 
 
-    // println("Is person 1 the same age as person 2? ${person1Age == person2Age}")          // false
-    //  println("Is person 1 not the same age as person 2? ${person1Age != person2Age}")      // true
-//    println("Is person 1 older than person 2? ${person1Age > person2Age}")                // false
-//    println("Is person 1 younger or the same age as person 2? ${person1Age <= person2Age}") // true
-
-
-
-
-
+    println("The maximum is : $max")
 
 
     /**
-     *  KOTLIN LOGICAL OPERATORS
-     *   And (&&) - Returns true if both statements are true
-     *   Or (||) - Returns true if one of the statements is true
-     *   Not (!) - Reverse the result, returns false if the result is true
+     *2. Syntax of when Statement
+     * ***********************
+     *
+     *   when (parameter){
+     *     condition1 -> body1
+     *     condition2 -> body2
+     *     condition3 -> body3
+     *   }
      */
 
-    val isSunny = true
-    val isWeekend = false
+    val trafficLightColor = "Purple"
+    when (trafficLightColor) {
+        "Red" -> {
+            println("Stop")
+            println("Blinking")
+        }
+        "Yellow" -> println("Go slow")
+        "Green" -> println("Go")
 
-    println("Should I go outside? ${isSunny && isWeekend}")  // false
-    println("Can I stay inside? ${!isSunny || !isWeekend}")  // true
+        else -> println("Invalid color")
+    }
 
 
+    //when expression
+    val action = when(trafficLightColor){
+        "Red" -> "Stop"
+        "Yellow" -> "Get ready"
+        "Green" -> "Go"
+        else -> "Invalid color"
+    }
 
-    //String template
-    //    $
+    println(action  )
 
-    val language = "Kotlin"
-    val human = "Einstein"
-    println("Hello ${person1Age + person2Age}! Can we be friends?")
-
-    val tax = 4+7
-
-    println("Hello world!")
 
 }
