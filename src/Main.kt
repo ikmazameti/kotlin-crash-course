@@ -1,48 +1,59 @@
-/**
- * For Loops
- */
+//FUNCTION IN KOTLIN
 
 fun main() {
+    greet()
 
-println(1)
-println(2)
-println(3)
-println(4)
-println(5)
+    greet("Mawuli")
+    greet("Daniel")
 
+    val result = square(8)
+    println(result)
 
+    greetUser()
+    greetUser("Mawuli")
 
+    greet( "Mawuli", "Good morning!")
+    greet(name = "Mawuli", message = "Good morning!")
+    greet(message = "Happy coding", name = "Daniel!")
 
-
-
-    //Syntax
-    /**
-     * for (item in collection){
-     *   //code
-     * }
-    * */
-
-//    Examples 1:
-
-
-//    for (item in collection ){
-//
-//    }
-
-    println("-------------------")
-    for (i in 1..5 ){
-        println(i)
-    }
-
-
-
-    //range
-    //start value .. end value
-
-
-    //collection
-    val fruits = arrayOf("orange","banana", "guava")
-
-    for (fruit in fruits)
-        println(fruit)
+   val result2= square(5)
+    println(result2)
 }
+
+/*
+*
+*
+* fun functionName() {
+    // function body
+}
+*/
+
+fun greet() {
+    println("Hello world!")
+}
+
+// parameters
+fun greet(name: String) {
+    println("Hello $name")
+}
+
+
+//return type
+//fun square(number: Int): Int {
+//    return number * number
+//}
+
+
+//default value
+fun greetUser(name: String = "there") {
+    println("Hello, $name")
+}
+
+//name arguement
+fun greet(name: String, message: String) {
+    println("$message, $name!")
+}
+
+
+//single-expression functions
+fun square(number: Int) = number * number
