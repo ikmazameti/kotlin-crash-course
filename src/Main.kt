@@ -1,59 +1,88 @@
-//FUNCTION IN KOTLIN
+/**
+ * COLLECTIONS: Array vs Lists
+ */
 
 fun main() {
-    greet()
+    /** 1. Arrays in Kotlin */
 
-    greet("Mawuli")
-    greet("Daniel")
+    // create arrays
 
-    val result = square(8)
-    println(result)
 
-    greetUser()
-    greetUser("Mawuli")
+    val fruits = arrayOf<String>("Banana", "pawpaw", "orange", "guava")
 
-    greet( "Mawuli", "Good morning!")
-    greet(name = "Mawuli", message = "Good morning!")
-    greet(message = "Happy coding", name = "Daniel!")
+    var age = 24
 
-   val result2= square(5)
-    println(result2)
+    var scores = arrayOf<Int>(90, 59, 69, 100, 88)
+
+//print(scores)
+
+    //accessing element in array
+    val mark = scores[2]
+    println(mark)
+
+    println(scores[4])
+
+
+    //updating value of element
+    scores[3] = 98
+
+    println(scores[3])
+
+
+    /** 2. List in Kotlin */
+
+
+    //immutable list - read-only operations
+
+    //create immutable list
+    var rainbowColors = listOf("Red", "Blue", "Violet", "Green", "Yellow", "Purple", "Pink")
+
+    //accessing element
+    println(rainbowColors[3])
+
+//    rainbowColors.remove("")
+
+    //mutable list
+    val daysOfWeek = mutableListOf("Monday", "Tuesday", "Wednesday")
+
+    //Before
+    println("Before")
+
+    for (day in daysOfWeek) {
+
+        println(day)
+    }
+
+    //access
+    // println(  daysOfWeek[1])
+
+    //adding items
+    daysOfWeek.add("Friday")
+    daysOfWeek.remove("Monday")
+    daysOfWeek.removeAt(2)
+
+    println("After")
+    for (day in daysOfWeek) {
+
+        println(day)
+    }
+
+
+//Size
+    val numOfItems = scores.size
+    println("Number of items: $numOfItems")
+
+    //iterate collection
+     daysOfWeek.forEach{ day ->
+         println(day)
+
+     }
+
+    //contains
+ val isAvailable =    daysOfWeek.contains("Tuesday")
+    println(isAvailable)
+
+
+
+
 }
-
-/*
-*
-*
-* fun functionName() {
-    // function body
-}
-*/
-
-fun greet() {
-    println("Hello world!")
-}
-
-// parameters
-fun greet(name: String) {
-    println("Hello $name")
-}
-
-
-//return type
-//fun square(number: Int): Int {
-//    return number * number
-//}
-
-
-//default value
-fun greetUser(name: String = "there") {
-    println("Hello, $name")
-}
-
-//name arguement
-fun greet(name: String, message: String) {
-    println("$message, $name!")
-}
-
-
-//single-expression functions
-fun square(number: Int) = number * number
