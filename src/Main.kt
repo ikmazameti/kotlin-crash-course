@@ -1,44 +1,71 @@
-/**
- * NULL SAFETY
- */
+/** OOP: Object-Oriented Programming */
 
 fun main() {
 
-    // Nullability
-//    var name :String = "Mawuli"
-//   // name = null
-//    var username :String?  = null
-//     username = "John"
-//    username = null
+    //create object
+    // val myPhone = Phone()
+    val myPhone = Phone("Apple", 64, 4000)
+//    myPhone.brand = "Samsung"
+//    myPhone.storage = 128
+//    myPhone.batteryLife = 4000
+
+    myPhone.makeCall("123-456-7890")
+    myPhone.takePhoto()
+
+    myPhone.brand = "Huawei"
+  //  myPhone.batteryLife = 12324
+
+}
+
+//Define class
+//class Phone(var brand: String, var storage: Int, var batteryLife: Int) {
+//
+//
+//    //methods
+//    fun makeCall(number: String) {
+//        println("Calling $number from my $brand phone...")
+//    }
+//
+//    fun takePhoto() {
+//        println("Taking a photo with my $brand phone!")
+//    }
+//
+//}
+
+//Secondary constructor
+/**class Phone(val brand: String) {
+var storage: Int = 64
+var batteryLife: Int = 3000
+
+constructor(brand: String, storage: Int, batteryLife: Int) : this(brand) {
+this.storage = storage
+this.batteryLife = batteryLife
+}
+
+fun makeCall(number: String) {
+println("Calling $number from my $brand phone...")
+}
+
+fun takePhoto() {
+println("Taking a photo with my $brand phone!")
+}
+
+}
+ */
 
 
-    /** Safe call (?.) */
-//    var name : String? = "John"
-//    print(name?.length)
+//Visibility modifiers
+class Phone(
+    var brand: String,
+    var storage: Int,
+    private var batteryLife: Int
+) {
 
-    /** Elvis Operator (?:) */
-//    var name: String? = null
-//    val length = name?.length ?: 0
-//    println(length)
+    fun makeCall(number: String) {
+        println("Calling $number from my $brand phone... Battery life: $batteryLife%")
+    }
 
-
-    /** Non-null assertion (!!) */
-
-//    var name:String? = "Mawuli"
-//    println(name    !!.length)
-
-
-    /** let scope function (let) */
-//    var name: String? = null
-//    name?.let { println("hello $name") }
-
-
-    /** run scope function (run) */
-    var name :String? = "mawuli"
-    val result = name?.run{
-        "Welocome, $this!"
-    } ?: "Name is missing"
-    println(result)
-
-
+    fun takePhoto() {
+        println("Taking a photo with my $brand phone!")
+    }
 }
