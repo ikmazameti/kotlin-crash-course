@@ -1,44 +1,76 @@
-/**
- * NULL SAFETY
- */
+/** OOP: Inheritance */
 
 fun main() {
 
-    // Nullability
-//    var name :String = "Mawuli"
-//   // name = null
-//    var username :String?  = null
-//     username = "John"
-//    username = null
+
+}
+
+open class Phone(val brand: String, var batteryLife: Int) {
+
+    open fun makeCall(number: String) {
+        println("Calling $number from $brand phone...")
+    }
+}
+
+//class SmartPhone(brand: String, batteryLife: Int, val operatingSystem: String) : Phone(brand, batteryLife) {
+//
+//    fun installApp(appName: String) {
+//        println("Installing $appName on $brand smartphone with $operatingSystem.")
+//    }
+//}
+
+class FeaturePhone(brand: String, batteryLife: Int) : Phone(brand, batteryLife) {
+
+    fun sendTextMessage(number: String, message: String) {
+        println("Sending '$message' to $number from $brand feature phone.")
+    }
+}
 
 
-    /** Safe call (?.) */
-//    var name : String? = "John"
-//    print(name?.length)
-
-    /** Elvis Operator (?:) */
-//    var name: String? = null
-//    val length = name?.length ?: 0
-//    println(length)
-
-
-    /** Non-null assertion (!!) */
-
-//    var name:String? = "Mawuli"
-//    println(name    !!.length)
+//class SmartPhone(
+//    brand: String, batteryLife: Int, val operatingSystem: String
+//) : Phone(brand, batteryLife) {
+//
+//    override fun makeCall(number: String) {
+//        println("Making a VoIP call to $number using $operatingSystem on a $brand smartphone.")
+//    }
+//
+//    fun installApp(appName: String) {
+//        println("Installing $appName on $brand smartphone with $operatingSystem.")
+//    }
+//}
 
 
-    /** let scope function (let) */
-//    var name: String? = null
-//    name?.let { println("hello $name") }
+//Abstract class
+abstract class Device(val brand: String) {
 
+    abstract fun powerOn()
 
-    /** run scope function (run) */
-    var name :String? = "mawuli"
-    val result = name?.run{
-        "Welocome, $this!"
-    } ?: "Name is missing"
-    println(result)
+    fun info() {
 
+        println("This is a $brand device.")
 
+    }
+}
+
+class Tablet(brand: String) : Device(brand) {
+    override fun powerOn() {
+        println("Powering on the $brand tablet.")
+    }
+
+}
+
+// Interfaces
+interface Chargeable {
+    fun charge()
+}
+
+class SmartPhone(
+    brand: String, batteryLife: Int,
+    operatingSystem: String
+) : Phone(brand, batteryLife), Chargeable {
+
+    override fun charge() {
+        println("Charging the $brand smartphone.")
+    }
 }
