@@ -1,44 +1,46 @@
-/**
- * NULL SAFETY
- */
+/** Data classes */
 
 fun main() {
 
-    // Nullability
-//    var name :String = "Mawuli"
-//   // name = null
-//    var username :String?  = null
-//     username = "John"
-//    username = null
+    //1. toString()
+    val myUser = User("Mawuli", 30)
+    println(myUser.toString())
+
+    //2. equals()
+    val user1 = User("Mawuli", 35)
+    val user2 = User("Mawuli", 35)
+
+    println(user2 == user1)
+
+    //3. hashCode()
 
 
-    /** Safe call (?.) */
-//    var name : String? = "John"
-//    print(name?.length)
+    //4. copy()
+    val updatedUser = user1.copy(age = 26)
 
-    /** Elvis Operator (?:) */
-//    var name: String? = null
-//    val length = name?.length ?: 0
-//    println(length)
+    println(updatedUser) // Output: User(name=Alice, age=26)
+
+    DatabaseConnection.connect()
 
 
-    /** Non-null assertion (!!) */
-
-//    var name:String? = "Mawuli"
-//    println(name    !!.length)
-
-
-    /** let scope function (let) */
-//    var name: String? = null
-//    name?.let { println("hello $name") }
-
-
-    /** run scope function (run) */
-    var name :String? = "mawuli"
-    val result = name?.run{
-        "Welocome, $this!"
-    } ?: "Name is missing"
+    //companion object
+    val result = MathUtil.square(4)
     println(result)
+}
+
+data class User(val name: String, val age: Int)
+
+object DatabaseConnection {
+    fun connect() {
+        println("connected to the database!")
+    }
+}
 
 
+class MathUtil {
+    companion object {
+        fun square(x: Int): Int {
+            return x * x
+        }
+    }
 }
